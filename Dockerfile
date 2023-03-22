@@ -27,6 +27,8 @@ ENV PATH $PATH:$SST_CORE_HOME/bin
 # Install needed packages and Python dependencies
 RUN apt-get update && \
     apt-get install -y \
+            vim \
+            nano \
             build-essential \
             cmake \
             automake \
@@ -43,7 +45,9 @@ RUN apt-get update && \
          numpy==1.23.5 \ 
          pyyaml==6.0 \
          setuptools==45.2.0 \
-         transformers==4.25.1
+         transformers==4.25.1 \
+         matplotlib==3.7.1 \
+         Pillow==9.1.0
 
 
 ############################################################

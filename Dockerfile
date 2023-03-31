@@ -91,14 +91,14 @@ RUN ln -s /usr/bin/aclocal /usr/bin/aclocal-1.13 && \
     export CXX=/usr/bin/g++ && \
     mkdir -p $SST/src $SST/local && \
     \
-    git clone --branch v11.1.0_Final https://github.com/sstsimulator/sst-core $SST_CORE_ROOT && \
+    git clone --branch v11.1.0_Final --depth 1 https://github.com/sstsimulator/sst-core $SST_CORE_ROOT && \
     cd $SST_CORE_ROOT && \
     ./autogen.sh && \
     ./configure --prefix=$SST_CORE_HOME --disable-mpi && \
     make all -j4 && \
     make install && \
     \
-    git clone --branch sparse_dataflows_project https://github.com/stonne-simulator/sst-elements-with-stonne $SST_ELEMENTS_ROOT && \
+    git clone --branch sparse_dataflows_project --depth 1 https://github.com/stonne-simulator/sst-elements-with-stonne $SST_ELEMENTS_ROOT && \
     cd $SST_ELEMENTS_ROOT && \
     ./autogen.sh && \
     ./configure --prefix=$SST_ELEMENTS_HOME --with-sst-core=$SST_CORE_HOME && \
